@@ -17,6 +17,10 @@ a {
   text-decoration: none;
 }
 
+.header-link:hover {
+    text-decoration: underline;
+}
+
 .header {
     padding: 10px 20px;
     display: flex;

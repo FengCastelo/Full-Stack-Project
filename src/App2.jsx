@@ -23,3 +23,5 @@ export default App2
 // <Header></Header>
 
 //alt="" > util para qnd surgir alterações/erros ser informado pela tag.
+
+//tag vazia em react se chama: fragment

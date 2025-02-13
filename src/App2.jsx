@@ -25,3 +25,7 @@ export default App2
 //alt="" > util para qnd surgir alterações/erros ser informado pela tag.
 
 //tag vazia em react se chama: fragment
+
+// Componentes recebem "props"
+
+//<StrictMode> -> renderiza os componentes em até 2x, potencializando erros para serem prevenidos.

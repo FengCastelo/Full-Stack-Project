@@ -58,4 +58,6 @@
 
 // path = muda o caminho/link que o componente irá aderir
 
+// npm i react-router-dom => cria um dom para "rotas" podendo ser ultilizado para páginas
+
 //

@@ -1,10 +1,8 @@
 import React from 'react'
 import SingleItem from './SingleItem';
-import { artistArray } from '../assets/database/artists';
-import { songsArray } from '../assets/database/songs';
 
 
-const ItenList = ({title, items}) => {
+const ItenList = ({title, items, itemsArray}) => {
   // console.log(items);
 
   return (
@@ -17,13 +15,15 @@ const ItenList = ({title, items}) => {
                 </div>
 
               <div className='item-list__container'>
-                {artistArray.filter((currentValue, index) => index < items)
+                {itemsArray
+                .filter((currentValue, index) => index < items)
                 .map((currObj, index) => (
                 <SingleItem
-                 id={currObj.id}
-                 name={currObj.name}
-                 image={currObj.image}
-                 banner={currObj.banner}
+                //  id={currObj.id}
+                //  name={currObj.name}
+                //  image={currObj.image}
+                //  banner={currObj.banner}
+                {...currObj}
                  key={`${title}-${index}`}/>))}
               </div>
          </div>

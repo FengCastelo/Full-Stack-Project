@@ -1,13 +1,4 @@
-//rafce (React arrow function component explorer)
-import React from 'react'
-
-const App2 = () => {
-  return (
-    <div>App2</div>
-  )
-}
-
-export default App2
+//rafce (React arrow function component explorer
 
 //Name of components
 //PascalCase
@@ -61,3 +52,6 @@ export default App2
                 //       .map((currentValue, index) => (
                 //       <SingleItem key={`${title}-${index}`}/>
                 //     ))}
+
+//spread operator -> cria uma cópia de um array ou objeto.
+//...

@@ -55,3 +55,7 @@
 
 //spread operator -> cria uma cópia de um array ou objeto.
 //...
+
+// path = muda o caminho/link que o componente irá aderir
+
+//

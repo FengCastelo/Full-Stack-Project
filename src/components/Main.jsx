@@ -7,9 +7,20 @@ const Main = () => {
   return (
       <div className='main'>
         {/* Item List - Artistas */}
-        <ItemList title="Artistas" items ={5} itemsArray={ artistArray }/>
+        <ItemList 
+        title="Artistas" 
+        items ={20} 
+        itemsArray={ artistArray } 
+        path="/artists"
+        />
         {/* Item List - Músicas */}
-        <ItemList title="Músicas" items ={20} itemsArray={ songsArray }/>
+        <ItemList 
+        title="Músicas" 
+        items ={10} 
+        itemsArray={ songsArray } 
+        path='/songs'
+        idPath='/song'
+        />
     </div>
   );
 };

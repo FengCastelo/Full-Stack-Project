@@ -1,5 +1,7 @@
 import React from 'react'
 import SingleItem from './SingleItem';
+import { artistArray } from '../assets/database/artists';
+import { songsArray } from '../assets/database/songs';
 
 
 const ItenList = ({title, items}) => {
@@ -15,28 +17,14 @@ const ItenList = ({title, items}) => {
                 </div>
 
               <div className='item-list__container'>
-                {items === 5 ? (
-                <>
-                <SingleItem />
-                <SingleItem />
-                <SingleItem />
-                <SingleItem />
-                <SingleItem />
-                </>
-                ) : (
-                  <>
-                  <SingleItem />
-                  <SingleItem />
-                  <SingleItem />
-                  <SingleItem />
-                  <SingleItem />
-                  <SingleItem />
-                  <SingleItem />
-                  <SingleItem />
-                  <SingleItem />
-                  <SingleItem />
-                  </>
-                )}
+                {artistArray.filter((currentValue, index) => index < items)
+                .map((currObj, index) => (
+                <SingleItem
+                 id={currObj.id}
+                 name={currObj.name}
+                 image={currObj.image}
+                 banner={currObj.banner}
+                 key={`${title}-${index}`}/>))}
               </div>
          </div>
   );

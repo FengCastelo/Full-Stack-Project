@@ -29,3 +29,35 @@ export default App2
 // Componentes recebem "props"
 
 //<StrictMode> -> renderiza os componentes em até 2x, potencializando erros para serem prevenidos.
+
+// for (i = 0; i < bound; i++)
+//  i++ = incrementa adicionando uma unidade ao valor "i".
+
+{/* {items === 5 ? (
+                <>
+                <SingleItem />
+                <SingleItem />
+                <SingleItem />
+                <SingleItem />
+                <SingleItem />
+                </>
+                ) : (
+                  <>
+                  <SingleItem />
+                  <SingleItem />
+                  <SingleItem />
+                  <SingleItem />
+                  <SingleItem />
+                  <SingleItem />
+                  <SingleItem />
+                  <SingleItem />
+                  <SingleItem />
+                  <SingleItem />
+                  </>
+                )} */}
+
+                // {Array(items)
+                //       .fill()
+                //       .map((currentValue, index) => (
+                //       <SingleItem key={`${title}-${index}`}/>
+                //     ))}

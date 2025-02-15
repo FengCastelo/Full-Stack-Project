@@ -6,6 +6,9 @@
 //Nomeação de Váriavel/Função: 
 // camelCase
 
+//Nomeação de classes:
+//kebab-case
+
 //export default posso importar com qlqr nome e sem chaves!
 //export "no default" só posso importar entre chaves e com o nome exportado
 

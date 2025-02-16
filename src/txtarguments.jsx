@@ -56,11 +56,11 @@
                 //       <SingleItem key={`${title}-${index}`}/>
                 //     ))}
 
-//spread operator -> cria uma cópia de um array ou objeto.
-//...
+//spread operator (...Obj) -> cria uma cópia de um array ou objeto.
 
 // path = muda o caminho/link que o componente irá aderir
 
 // npm i react-router-dom => cria um dom para "rotas" podendo ser ultilizado para páginas
 
-//
+// useParams -> Returns an object of key/value pairs of the dynamic params from the current URL that were matched by the routes. 
+// Child routes inherit all params from their parent routes.

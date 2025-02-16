@@ -6,7 +6,7 @@
   --green-400: hsl(141deg 75% 50%);
   --green-500: hsl(141deg 75% 45%);
   --green-600: hsl(141deg 75% 35%);
-  --green-700: hsl(141, 73%, 29%);
+  --green-700: hsl(141, 66%, 21%);
   --green-800: hsl(141, 70%, 25%);
   --green-900: hsl(141deg 75% 10%);
   --green-950: hsl(141deg 75% 5%);
@@ -73,7 +73,7 @@ img {
   flex: 1;
   background-image: linear-gradient(
     to bottom,
-    var(--green-700),
+    var(--green-800),
     var(--green-1000)
   );
   display: flex;
@@ -355,7 +355,7 @@ img {
   border-top-right-radius: 15px;
   background-image: linear-gradient(
     to bottom,
-    var(--green-800),
+    var(--green-700),
     var(--green-950)
   );
   border-top-left-radius: 15px;

@@ -64,3 +64,5 @@
 
 // useParams -> Returns an object of key/value pairs of the dynamic params from the current URL that were matched by the routes. 
 // Child routes inherit all params from their parent routes.
+
+//Math.ramdom -> gera um valor aleatório com valor de float (24 dígitos)

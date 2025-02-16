@@ -37,8 +37,8 @@ const ItenList = ({title, items, itemsArray, path, idPath}) => {
                 //  name={currObj.name}
                 //  image={currObj.image}
                 //  banner={currObj.banner}
-                idPath={idPath}
                 {...currObj}
+                idPath={idPath}
                  key={`${title}-${index}`}/>))}
               </div>
          </div>

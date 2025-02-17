@@ -17,6 +17,23 @@ const Song = () => {
   const artistObj = artistArray.filter(
     (currentartistObj) => currentartistObj.name === artist
   )[0];
+  //console.log()
+
+  const songsArrayFromArtist = songsArray.filter(
+    (currentSongObj) => currentSongObj.artist === artist
+  ); 
+
+  const ramdomIndex = Math.floor(
+    Math.random() * ( songsArrayFromArtist.length - 1)
+  );
+
+  const ramdomIndex2 = Math.floor(
+    Math.random() * ( songsArrayFromArtist.length - 1)
+  );
+  
+  const ramdomIdFromArtist = songsArrayFromArtist[ramdomIndex].id;
+  const ramdomId2FromArtist = songsArrayFromArtist[ramdomIndex2].id;
+ 
   
   return (
     <div className='song'>
@@ -38,7 +55,11 @@ const Song = () => {
             />
          </Link>
          
-         <Player duration={duration}/>
+         <Player 
+            duration={duration} 
+            ramdomIdFromArtist={ramdomIdFromArtist} 
+            ramdomId2FromArtist={ramdomId2FromArtist}
+          />
           
          <div>
           <p className='song__name'>{name}</p>

@@ -3,17 +3,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCirclePlay , faBackwardStep, faForwardStep} from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-const Player = ({duration, ramdomIdFromArtist, ramdomId2FromArtist}) => {
+const Player = ({duration, ramdomId, ramdomId2}) => {
   return (
     <div className="player">
         <div className="player__controllers"> 
-            <Link to={`/song/${ramdomIdFromArtist}`}>
+            <Link to={`/song/${ramdomId}`}>
               <FontAwesomeIcon className="player__icon" icon={faBackwardStep} />
             </Link>
 
             <FontAwesomeIcon className="player__icon player__icon--play" icon={faCirclePlay} />
 
-            <Link to={`/song/${ramdomId2FromArtist}`}>
+            <Link to={`/song/${ramdomId2}`}>
             <FontAwesomeIcon className="player__icon" icon={faForwardStep} />
             </Link>
         </div>

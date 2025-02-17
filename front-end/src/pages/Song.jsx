@@ -1,73 +1,85 @@
-import React from 'react'
-import Player from '../components/Player'
-import { Link, useParams} from 'react-router-dom'
-import { songsArray } from '../assets/database/songs'
-import { artistArray } from '../assets/database/artists'
-
+import React from "react";
+import Player from "../components/Player";
+import { Link, useParams } from "react-router-dom";
+import { songsArray } from "../assets/database/songs";
+import { artistArray } from "../assets/database/artists";
 
 const Song = () => {
+  const songId = useParams().id;
 
-  // console.log(id)
-  const {id} = useParams();
-  
-  const {image, name, duration, artist, audio } = songsArray.filter(
-    (currentSongObj) => currentSongObj.id === Number(id)
-  )[0];
+  // Encontrar a música correspondente ao songId
+  const songObj = songsArray.find(
+    (currentSongObj) => currentSongObj.id === Number(songId)
+  );
 
-  const artistObj = artistArray.filter(
-    (currentartistObj) => currentartistObj.name === artist
-  )[0];
-  //console.log()
+  // Verifica se a música foi encontrada para evitar erro ao acessar `undefined`
+  if (!songObj) {
+    return <h2>ERROR 404 - Música não Encontrada! </h2>;
+  }
 
+  const { image, name, duration, artist, audio, id } = songObj;
+
+  // Encontrar o artista correspondente
+  const artistObj = artistArray.find(
+    (currentArtistObj) => currentArtistObj.name === artist
+  );
+
+  // Verifica se o artista foi encontrado
+  if (!artistObj) {
+    return <p>Artista não encontrado!</p>;
+  }
+
+  // Filtrar músicas do mesmo artista
   const songsArrayFromArtist = songsArray.filter(
-    (currentSongObj) => currentSongObj.artist === artist
-  ); 
-
-  const ramdomIndex = Math.floor(
-    Math.random() * ( songsArrayFromArtist.length - 1)
+    (currentSongObj) => currentSongObj.artist === artistObj.name
   );
 
-  const ramdomIndex2 = Math.floor(
-    Math.random() * ( songsArrayFromArtist.length - 1)
-  );
-  
-  const ramdomIdFromArtist = songsArrayFromArtist[ramdomIndex].id;
-  const ramdomId2FromArtist = songsArrayFromArtist[ramdomIndex2].id;
- 
-  
+  // Verifica se há músicas suficientes antes de gerar índices aleatórios
+  let randomId = null;
+  let randomId2 = null;
+
+  if (songsArrayFromArtist.length > 1) {
+    const randomIndex = Math.floor(Math.random() * songsArrayFromArtist.length);
+    randomId = songsArrayFromArtist[randomIndex].id;
+
+    const randomIndex2 = Math.floor(
+      Math.random() * songsArrayFromArtist.length
+    );
+    randomId2 = songsArrayFromArtist[randomIndex2].id;
+  }
+
   return (
-    <div className='song'>
+    <div className="song">
       <div className="song__container">
-        <div className='song__image-container'>
-          <img src={image}
-          alt={`Imagem da música ${name}`}
-        />
+        <div className="song__image-container">
+          <img src={image} alt={`Imagem da música ${name}`} />
         </div>
       </div>
 
       <div className="song__bar">
-         <Link to={`/artist/${artistObj.id}`} className='song__artist-image'>
-            <img 
-              width={70}
-              height={70}
-              src={artistObj.image}
-              alt={`Imagem do Artista ${artist}`}
-            />
-         </Link>
-         
-         <Player 
-            duration={duration} 
-            ramdomIdFromArtist={ramdomIdFromArtist} 
-            ramdomId2FromArtist={ramdomId2FromArtist}
+        <Link to={`/artist/${artistObj.id}`} className="song__artist-image">
+          <img
+            width={75}
+            height={75}
+            src={artistObj.image}
+            alt={`Imagem do Artista ${artistObj.name}`}
           />
-          
-         <div>
-          <p className='song__name'>{name}</p>
-          <p>{artist}</p>
-         </div>
+        </Link>
+
+        <Player
+          duration={duration}
+          randomId={randomId}
+          randomId2={randomId2}
+          audio={audio}
+        />
+
+        <div>
+          <p className="song__name">{name}</p>
+          <p>{artistObj.name}</p>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Song
+export default Song;

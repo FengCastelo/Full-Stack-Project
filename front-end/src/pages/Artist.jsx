@@ -20,7 +20,7 @@ const Artist = () => {
   );  
 
   const ramdomIndex = (Math.floor(Math.random() * ( songsArrayFromArtist.length - 1)));
-  const ramdomIdFromArtist = songsArrayFromArtist[ramdomIndex].id;
+  const ramdomId = songsArrayFromArtist[ramdomIndex].id;
 
   console.log(Math.floor(Math.random()* (10 - 1)))
 
@@ -41,7 +41,7 @@ const Artist = () => {
 
       </div>
 
-      <Link to={`/song/${ramdomIdFromArtist}`}>
+      <Link to={`/song/${ramdomId}`}>
         <FontAwesomeIcon
           className='single-item__icon single-item__icon--artist' 
           icon={faCirclePlay} 

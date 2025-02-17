@@ -66,3 +66,8 @@
 // Child routes inherit all params from their parent routes.
 
 //Math.ramdom -> gera um valor aleatório com valor de float (24 dígitos)
+
+//Quando componentes se reenderizam
+// Uma das ocasiões é quando uma variavel de estado usada por este componente é atualizada.
+
+//Hook - useState (traz um estado para variavel)

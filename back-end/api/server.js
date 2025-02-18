@@ -21,7 +21,7 @@ app.get("/songs", (request, response) => {
 })
 app.get("/", (request, response) => {
     response.send(songsArray)
-})
+})  
 
 app.listen(PORT, () => {
     console.log(`O servidor está escutando na porta: ${PORT}`);

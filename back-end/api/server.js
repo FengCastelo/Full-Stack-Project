@@ -3,8 +3,6 @@
 //CRUD Create, Read, Update, Delete
 
 import express from "express";
-import {songsArray} from "../../front-end/src/assets/database/songs.js";
-import {artistArray} from "../../front-end/src/assets/database/artists.js";
 import { db } from "./connect.js";
 
 

@@ -7,7 +7,7 @@ const URI = "mongodb+srv://Fengcastelo:0311castelo@cluster0.opzgr.mongodb.net/?r
 
 const client = new MongoClient(URI);
 
-const db = client.db("spotifyproj");
-const songCollection = await db.collection("songs").find({}).toArray();
+export const db = client.db("spotifyproj");
+// const songCollection = await db.collection("songs").find({}).toArray();
 
-console.log(songCollection);
+// console.log(songCollection);

@@ -10,7 +10,6 @@ const client = new MongoClient(URI);
 
 export const db = client.db("spotifyproj");
 
-
 // const songCollection = await db.collection("songs").find({}).toArray();
 
 // console.log(songCollection);

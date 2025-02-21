@@ -9,7 +9,7 @@ const Song = () => {
 
   // Encontrar a música correspondente ao songId
   const songObj = songsArray.find(
-    (currentSongObj) => currentSongObj.id === Number(songId)
+    (currentSongObj) => currentSongObj._id === songId
   );
 
   // Verifica se a música foi encontrada para evitar erro ao acessar `undefined`
@@ -40,12 +40,12 @@ const Song = () => {
 
   if (songsArrayFromArtist.length > 1) {
     const randomIndex = Math.floor(Math.random() * songsArrayFromArtist.length);
-    randomId = songsArrayFromArtist[randomIndex].id;
+    randomId = songsArrayFromArtist[randomIndex]._id;
 
     const randomIndex2 = Math.floor(
       Math.random() * songsArrayFromArtist.length
     );
-    randomId2 = songsArrayFromArtist[randomIndex2].id;
+    randomId2 = songsArrayFromArtist[randomIndex2]._id;
   }
 
   return (
@@ -57,7 +57,7 @@ const Song = () => {
       </div>
 
       <div className="song__bar">
-        <Link to={`/artist/${artistObj.id}`} className="song__artist-image">
+        <Link to={`/artist/${artistObj._id}`} className="song__artist-image">
           <img
             width={75}
             height={75}

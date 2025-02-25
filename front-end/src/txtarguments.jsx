@@ -65,9 +65,13 @@
 // useParams -> Returns an object of key/value pairs of the dynamic params from the current URL that were matched by the routes. 
 // Child routes inherit all params from their parent routes.
 
-//Math.ramdom -> gera um valor aleatório com valor de float (24 dígitos)
+//Formatação:
+//Math.ramdom -> gera um valor aleatório com valor de float (24 dígitos);
+//Math.floor() -> pode ser ultilizado para arrendondar um certo valor
+
 
 //Quando componentes se reenderizam
 // Uma das ocasiões é quando uma variavel de estado usada por este componente é atualizada.
 
-//Hook - useState (traz um estado para variavel)
+//Hook - useState (traz um estado para variavel), 
+// useRef -> atribui uma referência a uma variável ultilizada " ( ref="")

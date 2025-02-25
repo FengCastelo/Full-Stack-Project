@@ -1,13 +1,42 @@
-import React from 'react';
+import React, { useRef }from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCirclePlay, faBackwardStep, faForwardStep } from '@fortawesome/free-solid-svg-icons';
+import { faCirclePlay, faBackwardStep, faForwardStep, faCirclePause } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
-const Player = ({ duration, randomId, randomId2 }) => {
+  const formatTime = (timeInseconds) => {
+    const minutes = Math.floor(timeInseconds / 60)
+    .toString()
+    .padStart(2, 0);
+    const seconds = Math.floor(timeInseconds - minutes *   60)
+    .toString()
+    .padStart(2, 0);
 
-  const handlePlayPause = () => {
-    console.log("Play/Pause clicado!");
-  };
+    return `${minutes}:${seconds}`
+  }
+
+const Player = ({ duration, 
+  randomId, 
+  randomId2, 
+  audio,
+ }) => {
+
+  const audioPlayer = useRef();
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState('00:00');
+  
+  // função
+  // console.log(audioPlayer.current.play());
+
+  const playPause = () => {
+    isPlaying ? audioPlayer.current.pause() : audioPlayer.current.play();
+
+    setIsPlaying(!isPlaying);
+    setCurrentTime(formatTime(audioPlayer.current.currentTime));
+    // console.log(formatTime(audioPlayer.current.currentTime));
+  }
+
+  // setIsPLaying(false);
 
   return (
     <div className="player">
@@ -18,8 +47,8 @@ const Player = ({ duration, randomId, randomId2 }) => {
 
         <FontAwesomeIcon
           className="player__icon player__icon--play"
-          icon={faCirclePlay}
-          onClick={handlePlayPause}
+          icon={ isPlaying ? faCirclePause : faCirclePlay}
+          onClick={() => playPause()}
           aria-label="Reproduzir/Pausar música"
         />
 
@@ -29,7 +58,7 @@ const Player = ({ duration, randomId, randomId2 }) => {
       </div>
 
       <div className="player__progress">
-        <time dateTime="00:00">00:00</time>
+        <time dateTime="00:00">{currentTime}</time>
 
         <div className="player__bar">
           <div className="player__bar-progress"></div>
@@ -37,6 +66,8 @@ const Player = ({ duration, randomId, randomId2 }) => {
 
         <time dateTime={duration}>{duration}</time>
       </div>
+
+      <audio ref={audioPlayer} src={audio}></audio>
     </div>
   );
 };

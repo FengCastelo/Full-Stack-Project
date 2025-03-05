@@ -1,10 +1,9 @@
 import React from 'react'
 import Main from '../components/Main'
 
-const Home = () => {
+export default Home = () => {
   return (
     <Main/>
   )
 }
 
-export default Home
